@@ -7,20 +7,21 @@ pyton app เพื่อใช้การทำนายแบบไพ่ Tar
 
 1. เตรียมไฟล์
 
-ตรวจสอบให้แน่ใจว่าคุณมีไฟล์ทั้งหมด 3 ไฟล์อยู่ในโฟลเดอร์เดียวกัน:
+ตรวจสอบให้แน่ใจว่าคุณมีไฟล์ทั้งหมด 5 ไฟล์อยู่ในโฟลเดอร์เดียวกัน:
 
-main.py (ไฟล์สคริปต์หลักของ Bot ที่เรากำลังแก้ไขนี้)
+main.py (ไฟล์สคริปต์หลักของ Bot)
 
-tarot_deck.py (ไฟล์ข้อมูลไพ่ 78 ใบ และตำแหน่ง Celtic Cross)
+tarot_deck.py (ไฟล์ข้อมูลไพ่ 78 ใบ)
 
 config.ini (ไฟล์สำหรับเก็บ API Keys)
 
+requirements.txt (ไฟล์ลิสต์ Library ที่จำเป็นทั้งหมด)
+
+start_bot.bat (ไฟล์สำหรับรัน Bot อัตโนมัติบน Windows)
+
 2. ติดตั้ง Library ที่จำเป็น
 
-Bot นี้ต้องการ Library ภายนอก 2 ตัวในการทำงาน คุณสามารถติดตั้งได้ผ่าน pip:
-
-pip install python-telegram-bot google-generativeai
-
+ไฟล์ requirements.txt ได้รวบรวม Library ทั้งหมดที่ Bot นี้ต้องการใช้ (เช่น python-telegram-bot, google-generativeai)
 
 3. ตั้งค่า API Keys
 
@@ -37,10 +38,21 @@ GOOGLE_API_KEY: รับมาจาก Google AI Studio (สำหรับ Ge
 
 4. รัน Bot
 
-เมื่อเตรียมไฟล์และตั้งค่า Key เรียบร้อยแล้ว ให้รัน Bot ผ่าน Terminal:
+เมื่อเตรียมไฟล์และตั้งค่า Key เรียบร้อยแล้ว:
 
-python main.py
+สำหรับผู้ใช้ Windows (วิธีที่แนะนำ):
 
+เพียงแค่ดับเบิลคลิกที่ไฟล์ start_bot.bat
+
+สคริปต์นี้จะทำการติดตั้ง Library ที่จำเป็นจาก requirements.txt ให้โดยอัตโนมัติ และตามด้วยการรัน python main.py เพื่อเริ่ม Bot ทันที
+
+สำหรับผู้ใช้ Mac/Linux (หรือรันด้วยตนเอง):
+
+เปิด Terminal
+
+ติดตั้ง Library ก่อน: pip install -r requirements.txt
+
+รัน Bot: python main.py
 
 หากทุกอย่างถูกต้อง Bot ของคุณจะเริ่มทำงาน
 
